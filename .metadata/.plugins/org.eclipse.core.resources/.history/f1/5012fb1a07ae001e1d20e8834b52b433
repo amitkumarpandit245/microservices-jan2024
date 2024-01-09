@@ -1,0 +1,9 @@
+package com.bvr;
+
+public class MyEndPoints2 {
+
+	public MyEndPoints2() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
