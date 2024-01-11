@@ -13,6 +13,8 @@ import org.springframework.web.client.RestTemplate;
 import com.bvr.models.CatalogItem;
 import com.bvr.models.Movie;
 import com.bvr.models.UserRating;
+import com.bvr.services.MovieInfo;
+import com.bvr.services.UserRatingInfo;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @RestController
@@ -24,25 +26,18 @@ public class CatalogResource {
 	}
 	
 	@Autowired
-	private RestTemplate restTemplate;
-
+	MovieInfo movieInfo;
+	
+	@Autowired
+	UserRatingInfo userRatingInfo;
 	
 	
 	@RequestMapping("/{userId}")
-	@HystrixCommand(fallbackMethod="getFallbackCatalog")
 	public List<CatalogItem> getCatalog(@PathVariable("userId") String userId){
-		UserRating userRating = restTemplate.getForObject("http://ratings-data-service/ratingsdata/user/" + userId, UserRating.class);
-		
+		UserRating userRating = userRatingInfo.getUserRating(userId);
 		return userRating.getRatings().stream()
-				.map(rating -> {
-					Movie movie = restTemplate.getForObject("http://movie-info-service/movies/" + rating.getMovieId(), Movie.class);
-					return new CatalogItem(movie.getName(), movie.getDescription(), rating.getRating());
-				})
+				.map(rating -> movieInfo.getCatalogItem(rating))
 				.collect(Collectors.toList());
-	}
-	
-	public List<CatalogItem> getFallbackCatalog(@PathVariable("userId") String userId){
-		return Arrays.asList(new CatalogItem("No Movie", "", 0));
 	}
 		
 }
