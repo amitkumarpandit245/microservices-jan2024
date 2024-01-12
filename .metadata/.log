@@ -3213,3 +3213,38 @@ java.util.concurrent.CompletionException: java.util.concurrent.CancellationExcep
 Caused by: java.util.concurrent.CancellationException
 	at java.base/java.util.concurrent.CompletableFuture.cancel(CompletableFuture.java:2478)
 	... 30 more
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-12 11:45:38.835
+!MESSAGE Classpath changed for project: demo-service-for-feign
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-12 11:45:38.836
+!MESSAGE Boot project ADDED: demo-service-for-feign
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-12 11:45:39.614
+!MESSAGE Classpath changed for project: demo-service-for-feign
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-01-12 11:46:00.913
+!MESSAGE Could not resolve completion items due to timeout after 500 milliseconds in `completionItem/resolve`
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.eclipse.lsp4e.operations.completion.LSCompletionProposal.getAdditionalProposalInfo(LSCompletionProposal.java:330)
+	at org.eclipse.lsp4e.operations.completion.LSCompletionProposal.getAdditionalProposalInfo(LSCompletionProposal.java:1)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$Timer$2$1.run(AdditionalInfoController.java:116)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-12 11:56:02.585
+!MESSAGE Classpath changed for project: feign-client
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-12 11:56:02.587
+!MESSAGE Boot project ADDED: feign-client
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-12 11:56:06.821
+!MESSAGE Classpath changed for project: feign-client
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-12 11:58:59.110
+!MESSAGE Classpath changed for project: demo
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-12 11:58:59.111
+!MESSAGE Boot project ADDED: demo
