@@ -9423,3 +9423,21 @@ java.util.concurrent.CompletionException: org.eclipse.lsp4j.jsonrpc.ResponseErro
 	at java.base/java.lang.Thread.run(Thread.java:840)
 Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
 	... 11 more
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-12 17:06:30.401
+!MESSAGE Classpath changed for project: jwt-service
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-12 17:06:40.573
+!MESSAGE Classpath changed for project: jwt-service
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-12 17:06:40.588
+!MESSAGE Boot project ADDED: jwt-service
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-12 17:06:41.602
+!MESSAGE Classpath changed for project: jwt-service
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-12 17:06:46.718
+!MESSAGE Classpath changed for project: jwt-service
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-01-12 17:06:50.279
+!MESSAGE Classpath changed for project: jwt-service
