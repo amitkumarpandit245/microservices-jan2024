@@ -24,7 +24,9 @@ public class CarSearchRepository {
 		return mongoTemplate.find(Query.query(new Criteria()
 									.orOperator(Criteria.where("description").regex(text, "i"),
 											Criteria.where("make").regex(text, "i"),
-											Criteria.where("model").regex(text, "i"))), Car.class);
+											Criteria.where("model").regex(text, "i"),
+											Criteria.where("year").is(Integer.parseInt(text)))), Car.class);
+
 	}
 
 }
